@@ -32,6 +32,11 @@ public class UsuarioController {
          return segurancaService.buscarPorId(id);
     }
 
+    @GetMapping(value = "/nome/{nome}")
+    public List<Usuario> buscarPorNome(@PathVariable("nome") String nome) {
+         return segurancaService.buscarPorNome(nome);
+    }
+
     @PostMapping
     public Usuario novoUsuario(@RequestBody Usuario usuario) {
         return segurancaService.novoUsuario(usuario);
